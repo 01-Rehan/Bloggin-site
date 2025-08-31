@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %>
+    <title><%= blog.title %>l</title>
+  </head>
+  <body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container m-4 ">
+        <h1 class="card-title"><%= blog.title %></h1>
+      <img
+        src="<%= blog.coverImage %>"
+        class="img-fluid"
+        style="width: 50vw; height: max-content"
+        alt="<%= blog.title %>"
+      />
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="author d-flex  align-items-center gap-3" style="width: max-content;height: 50px;">
+            <img src="<%= blog.createdBy.profileImageURL %>" alt="<%= blog.createdBy.fullName %>" style="width: 50px;" class="img-thumbnail"/>
+            <p><%= blog.createdBy.fullName %></p>
+          </div>
+          <pre class="card-text">
+            <%= blog.body %>
+          </pre>
+        </div>
+      </div>
+    </div>
+  </body>
+  <%- include('partials/script.ejs') %>
+</html>
